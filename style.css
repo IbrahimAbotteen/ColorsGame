@@ -24,7 +24,7 @@
 }
 
 /*this is for the big container of the colors*/
-.colContainer{
+/* .colContainer{
     display: flex;
     font-size: 25px;
     height: 400px;
@@ -33,11 +33,29 @@
     margin-top: 100px;
     align-content: center;
     border: solid black;
-}
+} */
 
 /*this is for each all small squares inside the big container*/
-.colors{
+/* .colors{
     display: flex;
+    flex-wrap: wrap;
     width: 200px;
     height: 200px;
+} */
+.colContainer{
+    position: absolute;
+    left: 450px;
+    bottom: 200px;
+    display: grid;
+    width: 300px;
+    height: 300px;
+    grid-template-columns: auto auto auto; 
+    box-sizing: border-box;
+}
+
+.colors{
+    display: flex;
+    border: 3px solid black;
+    align-items: center;
+    justify-content: center;
 }
