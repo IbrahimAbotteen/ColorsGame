@@ -1,3 +1,43 @@
-body{
-    background-color: blue;
+
+
+/* this is applied to the start menu buttons*/
+.start{
+    display: block;
+    font-size: 25px;
+    height: 100px;
+    width: 250px;
+    margin-left: 500px;
+    margin-bottom: 30px;
+    background-color: gray;
+    border: solid gray;
+}
+
+/* this is the container that contains all start menu buttons*/
+.startContainer{
+    position: absolute;
+    top: 100px;
+}
+
+/* a property used to hide elements from the page */
+.hide{
+    display: none;
+}
+
+/*this is for the big container of the colors*/
+.colContainer{
+    display: flex;
+    font-size: 25px;
+    height: 400px;
+    width: 400px;
+    margin-left: 500px;
+    margin-top: 100px;
+    align-content: center;
+    border: solid black;
+}
+
+/*this is for each all small squares inside the big container*/
+.colors{
+    display: flex;
+    width: 200px;
+    height: 200px;
 }
