@@ -59,3 +59,10 @@
     align-items: center;
     justify-content: center;
 }
+
+/*The class of the gamePlay*/
+.play{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
