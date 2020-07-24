@@ -17,14 +17,17 @@ let mM=document.querySelector('#memoryMode');//button
 let colBox=document.createElement('div');
 let colorBoxArr=[];
 let wordsArr=['blue','black','red','grey','green','brown'];
-let score=0;
+let score=null;
 let currentWord=null;
+let show=[];
+let rand=null;
+let word=null;
 let s=document.createElement('p');//The score p element
 let startButton=document.createElement('button');
 startButton.innerText='Start';
 startButton.setAttribute('class','hide');
 document.body.append(startButton);
-s.innerText=`Score: ${score}`;
+s.innerText=`Score:0`;
 s.setAttribute('class','hide');
 document.body.append(s);
 /* let gamePlay=document.createElement('div');
@@ -38,13 +41,28 @@ function hideElement(el){
   el.setAttribute('class','hide');
 }
 
-
+function gameOver(){
+  playAgain=document.createElement('button');
+  document.body.append(playAgain);
+  playAgain.setAttribute('class','start')
+  playAgain.innerText='PlayAgain';
+  hideElement(colBox);
+  playAgain.addEventListener('click',()=>{
+    hideElement(playAgain);
+    colBox.setAttribute('class','colContainer')
+    score=0;
+    s.innerText=`Score ${score}`;
+    word.setAttribute('class','words')
+  })
+}
 
 function wordShow(){
-  
-    let rand = wordsArr[Math.floor(Math.random() * wordsArr.length)];
-    let word=document.createElement('p');
+
+    rand = wordsArr[Math.floor(Math.random() * wordsArr.length)];
+    word=document.createElement('p');
+    word.setAttribute('class','words');
     word.innerText=rand;
+    //console.log(rand.target)
     document.body.append(word);
     currentWord=rand;
    // check(rand);
@@ -56,8 +74,22 @@ function timerModePlay(e){
   console.log(e.target.id);
   console.log(currentWord);
   //return event.target.id===currentWord;
-  if(e.target.id===currentWord)
-   return wordShow();
+  hideElement(word);
+  if(e.target.id===currentWord){
+    score++;
+    s.innerText=`score ${score}`;
+    return wordShow();
+  }
+   
+  else {
+    score--;
+    s.innerText=`score ${score}`;
+    if(score<0)
+      return gameOver();
+    else
+     return wordShow();
+  }
+    
  }  
 
 
@@ -72,8 +104,9 @@ function memoryModePlay(e){
 function startButtonFunc(mode){
   startButton.addEventListener('click',()=>{
     hideElement(startButton);
-    let rand = wordsArr[Math.floor(Math.random() * wordsArr.length)];
-    let word=document.createElement('p');
+    rand = wordsArr[Math.floor(Math.random() * wordsArr.length)];
+    word=document.createElement('p');
+    word.setAttribute('class','words');
     word.innerText=rand;
     currentWord=rand; 
     colorBox(mode);
