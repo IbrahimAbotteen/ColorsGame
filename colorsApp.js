@@ -38,6 +38,9 @@ document.body.append(h);
 let losingReport=document.createElement('p');
 document.body.append(losingReport);
 losingReport.setAttribute('class','hide');
+
+
+
 /* let gamePlay=document.createElement('div');
 gamePlay.setAttribute('class','hide');
 gamePlay.append(s);//putting the score inside the gamePlay container
@@ -52,23 +55,22 @@ function hideElement(el){
 function gameOver(){
   playAgain=document.createElement('button');
   document.body.append(playAgain);
-  playAgain.setAttribute('class','lose')
+  playAgain.setAttribute('class','lose');
   playAgain.innerText='PlayAgain';
   hideElement(colBox);
   losingReport.setAttribute('class','report');
   losingReport.innerText=`Game Over \n Your score is:${score} \n Your high score is:${high}`;
   hideElement(h);
   hideElement(s);
-
   playAgain.addEventListener('click',()=>{
-  hideElement(playAgain);
-  hideElement(losingReport);
-  s.setAttribute('class','score');
-  h.setAttribute('class','hScore');
-  colBox.setAttribute('class','colContainer')
-  score=0;
-  s.innerText=`Score: ${score}`;
-  word.setAttribute('class','words')
+      hideElement(playAgain);
+      hideElement(losingReport);
+      s.setAttribute('class','score');
+      h.setAttribute('class','hScore');
+      colBox.setAttribute('class','colContainer')
+      score=0;
+      s.innerText=`Score: ${score}`;
+      word.setAttribute('class','words')
   })
 }
 
@@ -209,7 +211,7 @@ for(let i of start){
   s.setAttribute('class','score');
   h.setAttribute('class','hScore');
   startButton.setAttribute('class','start');
-
+  startButton.setAttribute('id','start');
 })
 }
 
@@ -218,13 +220,13 @@ tM.addEventListener('click',(e)=>{
   timerMode();
 })
 
-eM.addEventListener('click',(e)=>{
+/* eM.addEventListener('click',(e)=>{
   easyMode();
 })
 
 mM.addEventListener('click',(e)=>{
   memoryMode();
-})
+}) */
 
 
 

@@ -1,4 +1,6 @@
-
+body{
+    background-image: url();
+}
 
 /* this is applied to the start menu buttons*/
 .start{
@@ -23,25 +25,6 @@
     display: none;
 }
 
-/*this is for the big container of the colors*/
-/* .colContainer{
-    display: flex;
-    font-size: 25px;
-    height: 400px;
-    width: 400px;
-    margin-left: 500px;
-    margin-top: 100px;
-    align-content: center;
-    border: solid black;
-} */
-
-/*this is for each all small squares inside the big container*/
-/* .colors{
-    display: flex;
-    flex-wrap: wrap;
-    width: 200px;
-    height: 200px;
-} */
 .colContainer{
     position: absolute;
     left: 450px;
@@ -58,13 +41,6 @@
     border: 3px solid black;
     align-items: center;
     justify-content: center;
-}
-
-/*The class of the gamePlay*/
-.play{
-    position: absolute;
-    top: 50px;
-    left: 50px;
 }
 
 .words{
@@ -107,13 +83,36 @@
 .lose{
     position: absolute;
     bottom: 250px;
-    right: 600px; 
-    margin: auto;
+    right: 600px;  
+    
     display: block;
     font-size: 25px;
     height: 100px;
     width: 250px;
     background-color: gray;
     border: solid gray;
+}
+
+.back{
+    position: absolute;
+    bottom: 100px;
+    right: 600px; 
+   
+    display: block;
+    font-size: 25px;
+    height: 100px;
+    width: 250px;
+    background-color: gray;
+    border: solid gray;
+}
+
+#timerMode{
+    position: absolute;
+    top: 150px;
+}
+
+#start{
+    position: absolute;
+    top: 150px;
 }
 
