@@ -75,3 +75,45 @@
     font-size: 50px;
     font-weight: bold;
 }
+
+.score{
+
+    position: absolute;
+    margin-top: 50px;
+    left:50px;
+    top: 20px;
+    font-size: 50px;
+    vertical-align: center;
+    padding: 50px;
+}
+.hScore{
+    position: absolute;
+    margin-top: 5px;
+    left:50px;
+    
+    font-size: 50px;
+    vertical-align: center;
+    padding: 50px;
+}
+.report{
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    bottom: 400px;
+    right: 500px;
+}
+.lose{
+    position: absolute;
+    bottom: 250px;
+    right: 600px; 
+    margin: auto;
+    display: block;
+    font-size: 25px;
+    height: 100px;
+    width: 250px;
+    background-color: gray;
+    border: solid gray;
+}
+

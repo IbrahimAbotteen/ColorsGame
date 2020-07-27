@@ -17,19 +17,27 @@ let mM=document.querySelector('#memoryMode');//button
 let colBox=document.createElement('div');
 let colorBoxArr=[];
 let wordsArr=['blue','black','red','grey','green','brown'];
-let score=null;
+let score=0;
+let high=0;
+let h=document.createElement('div');
+h.setAttribute('class','hide');
+h.innerText="HighScore: 0";
 let currentWord=null;
 let show=[];
 let rand=null;
 let word=null;
-let s=document.createElement('p');//The score p element
+let s=document.createElement('div');//The score p element
 let startButton=document.createElement('button');
 startButton.innerText='Start';
 startButton.setAttribute('class','hide');
 document.body.append(startButton);
-s.innerText=`Score:0`;
+s.innerText=`Score: 0`;
 s.setAttribute('class','hide');
 document.body.append(s);
+document.body.append(h);
+let losingReport=document.createElement('p');
+document.body.append(losingReport);
+losingReport.setAttribute('class','hide');
 /* let gamePlay=document.createElement('div');
 gamePlay.setAttribute('class','hide');
 gamePlay.append(s);//putting the score inside the gamePlay container
@@ -44,15 +52,23 @@ function hideElement(el){
 function gameOver(){
   playAgain=document.createElement('button');
   document.body.append(playAgain);
-  playAgain.setAttribute('class','start')
+  playAgain.setAttribute('class','lose')
   playAgain.innerText='PlayAgain';
   hideElement(colBox);
+  losingReport.setAttribute('class','report');
+  losingReport.innerText=`Game Over \n Your score is:${score} \n Your high score is:${high}`;
+  hideElement(h);
+  hideElement(s);
+
   playAgain.addEventListener('click',()=>{
-    hideElement(playAgain);
-    colBox.setAttribute('class','colContainer')
-    score=0;
-    s.innerText=`Score ${score}`;
-    word.setAttribute('class','words')
+  hideElement(playAgain);
+  hideElement(losingReport);
+  s.setAttribute('class','score');
+  h.setAttribute('class','hScore');
+  colBox.setAttribute('class','colContainer')
+  score=0;
+  s.innerText=`Score: ${score}`;
+  word.setAttribute('class','words')
   })
 }
 
@@ -77,20 +93,22 @@ function timerModePlay(e){
   hideElement(word);
   if(e.target.id===currentWord){
     score++;
-    s.innerText=`score ${score}`;
+    s.innerText=`Score: ${score}`;
     return wordShow();
   }
    
   else {
-    score--;
-    s.innerText=`score ${score}`;
-    if(score<0)
-      return gameOver();
-    else
-     return wordShow();
-  }
+    s.innerText=`Score: ${score}`;
+    if(score>high){
+      high=score;
+      h.innerText=`HighScore: ${high}`
+      
+    } 
+    return gameOver();
+
+ } 
     
- }  
+}
 
 
 function easyModePlay(e){
@@ -189,6 +207,7 @@ for(let i of start){
   console.log(i.innerText);
   hideElement(startContainer);//calling the hide function
   s.setAttribute('class','score');
+  h.setAttribute('class','hScore');
   startButton.setAttribute('class','start');
 
 })
