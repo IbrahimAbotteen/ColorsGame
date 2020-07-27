@@ -1,5 +1,5 @@
 body{
-    background-image: url();
+    background-image: url('backGround.jpg');
 }
 
 /* this is applied to the start menu buttons*/
@@ -50,6 +50,7 @@ body{
     left: 200px;
     font-size: 50px;
     font-weight: bold;
+   
 }
 
 .score{
@@ -61,15 +62,18 @@ body{
     font-size: 50px;
     vertical-align: center;
     padding: 50px;
+    color:red;
+    font-weight: bold;
 }
 .hScore{
     position: absolute;
     margin-top: 5px;
     left:50px;
-    
+    color: red;
     font-size: 50px;
     vertical-align: center;
     padding: 50px;
+    font-weight: bold;
 }
 .report{
     font-size: 50px;

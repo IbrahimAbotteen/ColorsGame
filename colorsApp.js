@@ -80,6 +80,7 @@ function wordShow(){
     word=document.createElement('p');
     word.setAttribute('class','words');
     word.innerText=rand;
+    word.style.color=rand;
     //console.log(rand.target)
     document.body.append(word);
     currentWord=rand;
@@ -92,27 +93,22 @@ function timerModePlay(e){
   console.log(e.target.id);
   console.log(currentWord);
   //return event.target.id===currentWord;
-  hideElement(word);
+   hideElement(word);
   if(e.target.id===currentWord){
     score++;
     s.innerText=`Score: ${score}`;
     return wordShow();
-  }
-   
+  }  
   else {
     s.innerText=`Score: ${score}`;
     if(score>high){
       high=score;
-      h.innerText=`HighScore: ${high}`
+      h.innerText=`HighScore: ${high}`;
       
     } 
     return gameOver();
-
- } 
-    
+ }     
 }
-
-
 function easyModePlay(e){
   console.log('this is easy mode')
 }
@@ -128,6 +124,7 @@ function startButtonFunc(mode){
     word=document.createElement('p');
     word.setAttribute('class','words');
     word.innerText=rand;
+    word.style.color=rand;
     currentWord=rand; 
     colorBox(mode);
     document.body.append(word);
@@ -135,9 +132,8 @@ function startButtonFunc(mode){
 }
 
 function fillUP(mode){
- 
-
   if (mode==='t'){
+
     for(let i of wordsArr){
       let col=document.createElement('div');
       col.setAttribute('class','colors');
