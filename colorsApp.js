@@ -84,13 +84,7 @@ function modePlay(e){
     return gameOver();
  }     
 }
-function easyModePlay(e){
-  console.log('this is easy mode')
-}
 
-function memoryModePlay(e){
-  console.log('this is memory mode');
-}
 
 function startButtonFunc(mode){
   startButton.addEventListener('click',()=>{
